@@ -1,0 +1,91 @@
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: white;
+  font-family: "Exo", sans-serif;
+}
+
+body,
+html {
+  min-height: 100%;
+}
+html {
+  background-color: #031526;
+}
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.button {
+  padding: 15px;
+  background-color: #1b7bcb;
+  transition: all 0.2s;
+}
+.button:hover {
+  background-color: white;
+  color: #1b7bcb;
+}
+
+.full_offers {
+  background-image: url("../../static/offers.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-top: 6rem;
+}
+/* --- Navigation ---*/
+.contacts_info_container {
+  background-color: #092c4c;
+  padding: 5px 0;
+}
+.contacts_info_container {
+  display: flex;
+  justify-content: space-between;
+}
+.contacts_info,
+.contacts_info > div,
+.social_media {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.contacts_info {
+  min-width: 500px;
+  margin-left: 3rem;
+}
+.contacts_info > div span {
+  margin-right: 10px;
+}
+
+.social_media {
+  min-width: 200px;
+  margin-right: 5em;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  width: 300px;
+}
+
+.contact,
+.contact > div {
+  display: flex;
+  align-items: center;
+}
+.contact {
+  margin: 30px 0;
+}
+.question {
+  margin-right: 20px;
+  border-right: 1px #bdbdbd solid;
+}
+.question p {
+  margin: 0 20px;
+}

@@ -1,0 +1,30 @@
+.container {
+  height: 650px;
+  background-image: linear-gradient(to right, rgba(49, 49, 49, 0.664), #03101d),
+    url("../../static/launching.webp");
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.launching_wrapper {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.small_title {
+  font-size: 2em;
+  font-weight: bolder;
+  word-spacing: 0.3em;
+  letter-spacing: 0.2em;
+}
+.big_title {
+  font-size: 7em;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 20px 0 40px;
+}

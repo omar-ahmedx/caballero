@@ -1,0 +1,111 @@
+.container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5803921568627451),
+      rgba(0, 0, 0, 0.5803921568627451)
+    ),
+    url("../../static/base.webp");
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: 100% 100%;
+}
+.container:hover .triangle {
+  right: 20%;
+}
+.container:hover .settings_container .settings {
+  transform: rotate(360deg);
+}
+
+.settings_container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  background-color: #1b7bcb;
+  width: 50px;
+  height: 50px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.settings {
+  width: 30px;
+  height: 30px;
+  background-image: url("../../static/settings.webp");
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: 100%;
+  transition: transform 2s;
+}
+
+.text {
+  text-align: center;
+}
+.text > h1,
+.text > h2 {
+  text-transform: uppercase;
+}
+.text h1 {
+  font-size: 5em;
+  letter-spacing: 15px;
+  margin: 10px 0 50px 0;
+}
+.text h2 {
+  font-size: 1.4em;
+  letter-spacing: 8px;
+  word-spacing: 10px;
+}
+
+.scroll_container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  animation: shake 2.5s ease-in-out infinite;
+  color: #c4c4c4;
+}
+@keyframes shake {
+  0% {
+    bottom: 10px;
+  }
+  50% {
+    bottom: 25px;
+  }
+  100% {
+    bottom: 10px;
+  }
+}
+.scroll_icon {
+  width: 20px;
+  height: 30px;
+  margin-right: 5px;
+  background-image: url("../../static/scroll.webp");
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: 20px;
+}
+
+.triangle {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: 100%;
+  width: 400px;
+  height: 400px;
+}
+.full_triangle {
+  top: 0;
+  right: 0;
+  background-image: url("../../static/fullTriangle.webp");
+  transition: right 1s;
+}
+.striped_triangle {
+  bottom: 0;
+  right: 0;
+  background-image: url("../../static/stripedTriangle.webp");
+  transition: right 1.5s;
+}

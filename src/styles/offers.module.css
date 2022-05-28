@@ -1,0 +1,33 @@
+.container {
+  text-align: center;
+  padding-bottom: 5em;
+}
+.container > div:first-child {
+  margin: 0 auto;
+  margin-top: 6em;
+  display: inline-block;
+}
+.title {
+  font-size: 2em;
+  margin-bottom: 3em;
+}
+.offers_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.offers_wrapper {
+  background-color: #03101d;
+  border: 1px solid #252f38;
+  padding: 5.5em 0;
+  max-width: 17%;
+  min-width: 15%;
+}
+
+.offers_icons {
+  margin: 0 auto;
+  margin-bottom: 40px;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: 100% 100%;
+}

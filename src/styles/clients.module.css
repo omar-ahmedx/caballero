@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 5em 0;
+  border-bottom: 1px solid #707070;
+  background-image: url("../../static/client_bg.svg");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: auto 250px;
+}
+.container > div:first-of-type {
+  min-width: 20%;
+  width: 20%;
+}
+
+.picture {
+  margin: 0 auto;
+  background-image: url("../../static/client.webp");
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-position: calc(60%);
+  background-size: cover;
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+}
+.client_text_container {
+  min-width: 70%;
+}
+.client_text {
+  color: #aea8b9;
+  font-size: 1.2em;
+  line-height: 2;
+}
+
+.client_info {
+  margin-top: 1em;
+}
+.client_info p:first-child {
+  font-size: 1.4em;
+  color: #1b7bcb;
+}
+.client_info p:last-child {
+  margin-top: 0.5em;
+  color: #aea8b9;
+}
+.client_contact {
+  position: absolute;
+  right: 3em;
+  bottom: 3em;
+  width: 5em;
+  height: 5em;
+  background-image: url("../../static/client_contact.svg");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 100%;
+}
