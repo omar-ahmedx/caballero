@@ -1,5 +1,6 @@
 import * as React from "react";
 import AboutUs from "../components/AboutUs";
+import Blogs from "../components/Blogs";
 import Clients from "../components/Clients";
 import CompletedWork from "../components/CompletedWork";
 import Launching from "../components/Launching";
@@ -58,6 +59,10 @@ const IndexPage = () => {
       </section>
 
       <Questions />
+
+      <section className="container">
+        <Blogs />
+      </section>
     </Layout>
   );
 };

@@ -16,20 +16,21 @@
 }
 .question_icon {
   height: 100px;
-  width: 260px;
+  width: 30%;
   position: relative;
   background-image: url("../../static/question_icon.webp");
   background-repeat: no-repeat;
   background-origin: content-box;
-  background-size: 100% 100%;
+  background-size: contain;
   animation: shake 3s ease-in-out infinite;
 }
 .questions_container p:first-child {
   width: 30%;
   font-size: 2em;
 }
+
 .questions_container p:last-child {
-  width: 24%;
+  width: 30%;
   font-size: 1.3em;
 }
 
