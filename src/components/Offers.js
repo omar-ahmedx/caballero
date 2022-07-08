@@ -1,57 +1,83 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import Header from "./shared/Header";
-import * as offersStyle from "../styles/offers.module.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import * as styles from "../styles/offers.module.css";
+import { GatsbyImage } from "gatsby-plugin-image";
 export default function Offers() {
-  const data = useStaticQuery(graphql`
-    query Icons {
-      allFile(filter: { relativeDirectory: { eq: "offers" } }) {
+  const offersData = useStaticQuery(graphql`
+    query offers {
+      allContentfulOffers {
         nodes {
-          publicURL
+          desc
+          title
+          icon {
+            gatsbyImageData(layout: CONSTRAINED)
+          }
         }
       }
     }
   `);
-  const icons = data.allFile.nodes;
+  const offers = offersData.allContentfulOffers.nodes;
 
-  const titles = [
-    "Product Development",
-    "UI/UX DEsigning",
-    "Graphic Design",
-    "Content Management",
-    "Data Analysis",
-  ];
-  const desc = [
-    "Lorem ipsum dolor dit amelm,. conssetoture ja dme nbels",
-    "Lorem ipsum dolor dit amelm,. conssetoture ja dme nbels",
-    "Lorem ipsum dolor dit amelm,. conssetoture ja dme nbels",
-    "Lorem ipsum dolor dit amelm,. conssetoture ja dme nbels",
-    "Lorem ipsum dolor dit amelm,. conssetoture ja dme nbels",
-  ];
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1500,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 1180,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 880,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
   return (
-    <div className={`${offersStyle.container} container`}>
+    <div className={`${styles.container} container`}>
       <div>
         <Header header={"what we're offering"} />
       </div>
-      <p className={offersStyle.title}>
+      <p className={styles.title}>
         Services we're providing <br />
         to our customers
       </p>
-      <div className={offersStyle.offers_container}>
-        {titles.map((title, index) => (
-          <div key={index} className={offersStyle.offers_wrapper}>
-            <div
-              className={offersStyle.offers_icons}
-              style={{
-                backgroundImage: `url(${icons[index].publicURL})`,
-                width: "80px",
-                height: "80px",
-              }}
-            ></div>
-            <p>{title}</p>
-            <p>{desc[index]}</p>
-          </div>
-        ))}
+      <div>
+        <Slider {...settings}>
+          {offers.map((offer, index) => (
+            <div key={index}>
+              <div className={styles.offers_wrapper}>
+                <div className={styles.offers_icons}>
+                  <GatsbyImage image={offer.icon.gatsbyImageData} alt=" " />
+                </div>
+                <p className={styles.offers_title}>{offer.title}</p>
+                <p className={styles.offers_p}>{offer.desc}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
   );

@@ -14,9 +14,9 @@
   background-origin: content-box;
   background-size: 100% 100%;
 }
-.container:hover .triangle {
-  right: 20%;
-}
+/*.container:hover .full_triangle {
+  top: 25%;
+}*/
 .container:hover .settings_container .settings {
   transform: rotate(360deg);
 }
@@ -49,6 +49,8 @@
 .text > h1,
 .text > h2 {
   text-transform: uppercase;
+  position: relative;
+  z-index: 1;
 }
 .text h1 {
   font-size: 5em;
@@ -60,12 +62,16 @@
   letter-spacing: 8px;
   word-spacing: 10px;
 }
-
 .scroll_container {
-  display: flex;
-  align-items: center;
   position: absolute;
   animation: shake 2.5s ease-in-out infinite;
+  z-index: 1;
+}
+
+.scroll_container > a {
+  display: flex;
+  align-items: center;
+
   color: #c4c4c4;
 }
 @keyframes shake {
@@ -80,6 +86,8 @@
   }
 }
 .scroll_icon {
+  position: relative;
+  z-index: 1;
   width: 20px;
   height: 30px;
   margin-right: 5px;
@@ -108,4 +116,19 @@
   right: 0;
   background-image: url("../../static/stripedTriangle.webp");
   transition: right 1.5s;
+}
+
+@media (max-width: 720px) {
+  .text h1 {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 720px) {
+  .text h1 {
+    font-size: 2em;
+  }
+  .text h2 {
+    font-size: 1.2em;
+  }
 }

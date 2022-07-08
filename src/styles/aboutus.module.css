@@ -1,0 +1,154 @@
+.aboutUs_section_container {
+  display: flex;
+}
+.image_container {
+  position: relative;
+  width: 55%;
+  max-width: 900px;
+  height: 600px;
+  margin-right: 4em;
+}
+
+.image {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: 100% 100%;
+}
+.top_image {
+  width: 480px;
+  height: 320px;
+  right: 4em;
+  top: 0;
+}
+.bot_image {
+  width: 460px;
+  max-width: 450px;
+  height: 300px;
+  right: 0;
+  bottom: 2em;
+}
+.clients {
+  position: relative;
+  top: 120px;
+  right: 70px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #338fda;
+}
+.clients:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  border-right: 2.5em solid #338fda;
+  border-top: 1em solid transparent;
+}
+.back_image {
+  width: 400px;
+  height: 300px;
+  top: 170px;
+  right: 350px;
+  background-image: url("../../static/aboutUs/back.webp");
+  animation: rotate 6s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.aboutUs_container {
+  width: 40%;
+  padding-right: 3em;
+}
+.tech_problem {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.tech_problem > div {
+  margin-right: 20px;
+}
+.btn_container {
+  width: 140px;
+  margin-top: 40px;
+}
+.btn_container a {
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  .aboutUs_section_container {
+    padding-right: 3em;
+  }
+  .image_container {
+    width: 100%;
+  }
+  .aboutUs_section_container {
+    flex-direction: column;
+  }
+
+  .aboutUs_container {
+    width: 100%;
+    max-width: 800px;
+    margin: 2em auto;
+    padding-left: 2em;
+  }
+}
+@media (max-width: 750px) {
+  .top_image {
+    width: 400px;
+  }
+  .bot_image {
+    width: 400px;
+  }
+  .back_image {
+    right: 260px;
+  }
+}
+@media (max-width: 670px) {
+  .aboutUs_section_container {
+    padding: 0 2em;
+  }
+  .back_image,
+  .top_image {
+    display: none;
+  }
+  .image_container {
+    height: 400px;
+  }
+  .bot_image {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    height: 400px;
+  }
+  .aboutUs_container {
+    padding: 0;
+  }
+}
+
+/*  
+@media (max-width: 600px) {
+  .bot_image,
+  .mid_image {
+    display: none;
+  }
+  .image_container {
+    padding: 20px 0;
+  }
+  .top_image {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    min-width: auto;
+    height: 400px;
+  }
+}
+*/

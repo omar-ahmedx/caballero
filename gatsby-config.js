@@ -8,6 +8,13 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
+      resolve: "gatsby-source-contentful",
+      options: {
+        spaceId: `9iub757bz1xs`,
+        accessToken: "-NFThepgvVCbQzkfJl2s9g3IB39aa741ci_bYiw5Qn8",
+      },
+    },
+    {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "src/images/icon.png",
@@ -23,14 +30,6 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "services",
-        path: "./src/services/",
-      },
-      __key: "services",
     },
     {
       resolve: "gatsby-source-filesystem",

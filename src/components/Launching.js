@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 
 import * as launchingStyles from "../styles/launching.module.css";
@@ -10,7 +11,9 @@ export default function Launching() {
         </p>
         <p className={launchingStyles.big_title}>Launching</p>
         <div>
-          <div className="button">Contact us now</div>
+          <Link to="contact" className="button">
+            Contact us now
+          </Link>
         </div>
       </div>
     </div>

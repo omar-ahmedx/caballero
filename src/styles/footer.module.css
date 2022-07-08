@@ -1,0 +1,132 @@
+footer {
+  background-image: linear-gradient(#031526c4, #031526c4),
+    url("../../static/client_bg.webp"), url("../../static/client_bg.webp");
+  background-size: cover, 380px, 380px;
+  background-position: left top, right bottom;
+  background-repeat: no-repeat;
+  margin-top: 4em;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 95vw;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+.wrapper > div {
+  flex-basis: 25%;
+}
+
+.logo p {
+  margin: 2em 0;
+  color: #ada7b8;
+}
+.sub_container {
+  position: relative;
+}
+.telegram {
+  position: absolute;
+  width: 40px;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+}
+.telegram img {
+  width: 80%;
+}
+.input {
+  width: 100%;
+  height: 50px;
+  color: grey;
+  padding: 10px;
+}
+
+.section_container {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.section_container > div:first-of-type {
+  font-size: 1.7em;
+  margin-bottom: 1em;
+}
+
+.links_wrapper > a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+
+.links_wrapper a:hover,
+.active {
+  color: #166bb1;
+}
+
+.arrow_blue {
+  display: none !important;
+}
+.links_wrapper a:hover .arrow_blue,
+.active .arrow_blue {
+  display: block !important;
+}
+.links_wrapper a:hover .arrow_white,
+.active .arrow_white {
+  display: none;
+}
+
+.links_wrapper span {
+  display: inline-block;
+  margin-right: 5px;
+  height: 17px;
+  width: 10px;
+}
+
+.contact_container > a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8em;
+}
+.contact_container span {
+  margin-right: 10px;
+}
+
+.social_media {
+  display: flex;
+  justify-content: space-around;
+  margin: 2em 0;
+}
+
+.social_media a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2389c9;
+  padding: 0.5em;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+@media (max-width: 1000px) {
+  .links_container {
+    display: none;
+  }
+
+  .wrapper > div {
+    flex-basis: 30%;
+  }
+}
+
+@media (max-width: 850px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .wrapper > div {
+    width: 95vw;
+    max-width: 400px;
+    margin: 2em auto;
+  }
+}

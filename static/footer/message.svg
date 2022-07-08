@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23.251" height="16.349" viewBox="0 0 23.251 16.349">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2597dc"/>
+      <stop offset="1" stop-color="#1f7bb5"/>
+    </linearGradient>
+  </defs>
+  <g id="meesage3" transform="translate(0 -76)">
+    <g id="Group_47405" data-name="Group 47405" transform="translate(1.191 85.139)">
+      <g id="Group_47404" data-name="Group 47404">
+        <path id="Path_9742" data-name="Path 9742" d="M40.1,277.251,38.154,279.2a2.155,2.155,0,0,1-2.986,0l-1.947-1.954-6.994,7.017a2.024,2.024,0,0,0,.853.192H46.243a2.022,2.022,0,0,0,.852-.192Z" transform="translate(-26.226 -277.251)" fill="url(#linear-gradient)"/>
+      </g>
+    </g>
+    <g id="Group_47407" data-name="Group 47407" transform="translate(1.191 76)">
+      <g id="Group_47406" data-name="Group 47406" transform="translate(0 0)">
+        <path id="Path_9743" data-name="Path 9743" d="M46.245,76H27.08a2.023,2.023,0,0,0-.852.192l7.474,7.5h0l2.43,2.438a.818.818,0,0,0,1.057,0l2.43-2.438v0h0l7.474-7.5A2.022,2.022,0,0,0,46.245,76Z" transform="translate(-26.228 -76)" fill="url(#linear-gradient)"/>
+      </g>
+    </g>
+    <g id="Group_47409" data-name="Group 47409" transform="translate(0 77.145)">
+      <g id="Group_47408" data-name="Group 47408">
+        <path id="Path_9744" data-name="Path 9744" d="M.217,101.212a2.018,2.018,0,0,0-.217.9v12.261a2.018,2.018,0,0,0,.217.9l7.006-7.029Z" transform="translate(0 -101.212)" fill="url(#linear-gradient)"/>
+      </g>
+    </g>
+    <g id="Group_47411" data-name="Group 47411" transform="translate(16.028 77.145)">
+      <g id="Group_47410" data-name="Group 47410" transform="translate(0 0)">
+        <path id="Path_9745" data-name="Path 9745" d="M359.939,101.21l-7.006,7.03,7.006,7.029a2.018,2.018,0,0,0,.217-.9V102.109A2.018,2.018,0,0,0,359.939,101.21Z" transform="translate(-352.933 -101.21)" fill="url(#linear-gradient)"/>
+      </g>
+    </g>
+  </g>
+</svg>

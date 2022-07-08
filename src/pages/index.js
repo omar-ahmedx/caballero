@@ -1,44 +1,50 @@
+import { Link } from "gatsby";
 import * as React from "react";
 import AboutUs from "../components/AboutUs";
 import Blogs from "../components/Blogs";
 import Clients from "../components/Clients";
 import CompletedWork from "../components/CompletedWork";
+import Info from "../components/Info";
 import Launching from "../components/Launching";
 import Layout from "../components/Layout";
 import Offers from "../components/Offers";
 import Questions from "../components/Questions";
-import Services from "../components/shared/Services";
+import Services from "../components/shared/Services-home";
 import * as base from "../styles/home.module.css";
 const IndexPage = () => {
   return (
-    <Layout>
+    <Layout currentPath="home">
       <div className={base.container}>
         <div className={base.settings_container}>
-          <div className={base.settings}></div>
+          <Link to="/contact" className={base.settings}></Link>
         </div>
 
         <div className={base.text}>
-          <h2>it softweare solution & technology</h2>
-          <h1>Caballero</h1>
+          <h2>TECHNOLOGY SOLUTIONS AND SECURITY SYSTEMS</h2>
+          <h1>CABALLERO</h1>
         </div>
 
         <div>
-          <div className="button">Discover more</div>
+          <Link to="/about-us" className="button">
+            Discover more
+          </Link>
         </div>
 
         <div className={base.scroll_container}>
-          <div className={base.scroll_icon}></div>Scroll Down
+          <Link to="#about-us">
+            <div className={base.scroll_icon}></div>
+            Scroll Down
+          </Link>
         </div>
 
         <div className={`${base.triangle} ${base.full_triangle}`}></div>
         <div className={`${base.triangle} ${base.striped_triangle}`}></div>
       </div>
-
-      <section className="container">
-        <Services />
+      <section id="about-us" className="container">
+        <Services place="home" />
       </section>
 
-      <section className="container">
+      <section>
         <AboutUs />
       </section>
 
@@ -55,14 +61,16 @@ const IndexPage = () => {
       </section>
 
       <section>
-        <CompletedWork />
+        <CompletedWork place="home" />
       </section>
 
       <Questions />
 
       <section className="container">
-        <Blogs />
+        <Blogs place="home" />
       </section>
+
+      <Info />
     </Layout>
   );
 };

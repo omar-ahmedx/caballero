@@ -1,0 +1,62 @@
+.upper_header div {
+  justify-content: center;
+}
+.low_header {
+  text-align: center;
+  font-size: 2em;
+}
+.team_container {
+  margin: 4em 0 10em 0;
+}
+.member {
+  position: relative;
+  box-sizing: border-box;
+  width: 95%;
+  max-width: 350px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3em 7%;
+}
+.member_image {
+  width: 130px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 2px solid #4075a2;
+}
+.member_info {
+  width: fit-content;
+  margin: 3em auto;
+  background-color: #2185c3;
+  padding: 1em 20%;
+  border-radius: 30px;
+}
+.member_social {
+  display: flex;
+  justify-content: space-around;
+}
+.black_squareSM,
+.black_squareL {
+  position: absolute;
+  width: 100%;
+  background-color: #293b4c;
+  z-index: -1;
+}
+.black_squareSM {
+  left: 0;
+  top: 0;
+  height: 22%;
+  transition: all 200ms linear;
+}
+.black_squareL {
+  height: 76%;
+  bottom: 0;
+  left: 0;
+  transition: all 200ms linear;
+}
+
+.member:hover .black_squareL {
+  height: 77%;
+}
+.member:hover .black_squareSM {
+  height: 23%;
+}
