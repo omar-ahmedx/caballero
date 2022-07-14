@@ -1,12 +1,39 @@
 import { StaticImage } from "gatsby-plugin-image";
-import React from "react";
+import React, { useRef } from "react";
 import Layout from "../../components/Layout";
 import Base from "../../components/shared/Base";
+import emailjs from "@emailjs/browser";
 import * as styles from "../../styles/contact.module.css";
 import Header from "../../components/shared/Header";
 import { graphql } from "gatsby";
-export default function index({ data }) {
+export default function Index({ data }) {
   const contactUs = data.allContentfulContactUs.nodes[0];
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_nizaa7m",
+        "template_1giy29e",
+        form.current,
+        "5Nx76CAqTuW8B6HR5"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach((input) => {
+      input.value = " ";
+    });
+    document.querySelector("textarea").value = " ";
+  };
   return (
     <Layout currentPath="contact">
       <Base path="Contact" header="Contact Us" />
@@ -85,16 +112,16 @@ export default function index({ data }) {
           <Header header={"Send us email"} />
           <p>Feel free to write</p>
         </div>
-        <form>
+        <form ref={form} onSubmit={sendEmail}>
           <div>
-            <input type="text" placeholder="Your name" />
-            <input type="email" placeholder="Email address" />
+            <input type="text" placeholder="Your name" name="user_name" />
+            <input type="email" placeholder="Email address" name="user_email" />
           </div>
           <div>
-            <input type="tel" placeholder="Phone number" />
-            <input type="text" placeholder="Subject" />
+            <input type="tel" placeholder="Phone number" name="user_number" />
+            <input type="text" placeholder="Subject" name="subject" />
           </div>
-          <textarea placeholder="Write comment"></textarea>
+          <textarea placeholder="Write comment" name="message"></textarea>
           <button>Send a message</button>
         </form>
       </div>

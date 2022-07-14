@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import * as styles from "../styles/info.module.css";
 import { graphql, useStaticQuery } from "gatsby";
 import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
 
 export default function Info() {
   const blogsData = useStaticQuery(graphql`
@@ -60,7 +61,14 @@ export default function Info() {
               <GatsbyImage image={li.icon.gatsbyImageData} alt=" " />
             </div>
             <p className={styles.number}>
-              <CountUp current={0} end={li.number} enableScrollSpy={true} /> +
+              <CountUp start={0} end={li.number} redraw={true} duration={2}>
+                {({ countUpRef, start }) => (
+                  <VisibilitySensor onChange={start} delayedCall>
+                    <span ref={countUpRef} />
+                  </VisibilitySensor>
+                )}
+              </CountUp>
+              +
             </p>
             <p className={styles.text}>{li.title}</p>
           </div>

@@ -58,8 +58,8 @@ export default function AboutBlogs() {
                   backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),url(${blog.image.url})`,
                 }}
               >
-                <div className={styles.text}>{blog.title}</div>
               </div>
+                <div className={styles.text}>{blog.title}</div>
             </div>
           ))}
         </Slider>

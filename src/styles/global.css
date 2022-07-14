@@ -126,3 +126,6 @@ nav {
   background-color: #072037;
   border-radius: 50%;
 }
+.slick-track {
+  left: 0 !important;
+}
