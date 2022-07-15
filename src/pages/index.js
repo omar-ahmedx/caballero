@@ -56,9 +56,9 @@ const IndexPage = () => {
         <Launching />
       </section>
 
-      <section style={{ background: "#03101d" }}>
+      {/*<section style={{ background: "#03101d" }}>
         <Clients />
-      </section>
+  </section>*/}
 
       <section>
         <CompletedWork place="home" />

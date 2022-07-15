@@ -2,14 +2,12 @@ import React from "react";
 import Header from "./shared/Header";
 import * as styles from "../styles/team.module.css";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import { graphql, Link, useStaticQuery } from "gatsby";
 export default function Team() {
   const teamData = useStaticQuery(graphql`
     query team {
-      allContentfulTeam {
+      allContentfulTeam(sort: { fields: contentfulid }) {
         nodes {
           image {
             gatsbyImageData(layout: CONSTRAINED)
@@ -25,43 +23,7 @@ export default function Team() {
     }
   `);
   const team = teamData.allContentfulTeam.nodes;
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    centerMode: true,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1300,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 950,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 650,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-    ],
-  };
+
   return (
     <div>
       <div className={styles.upper_header}>
@@ -69,19 +31,12 @@ export default function Team() {
       </div>
       <p className={styles.low_header}>Our Awesome Team</p>
       <div className={styles.team_container}>
-        <Slider {...settings}>
-          {team.map((member, index) => (
-            <div key={index}>
-              <div className={styles.member}>
-                <div className={styles.black_squareSM}></div>
-                <div className={styles.black_squareL}></div>
-                <div className={styles.member_image}>
-                  <GatsbyImage image={member.image.gatsbyImageData} alt=" " />
-                </div>
-                <div className={styles.member_info}>
-                  <p>{member.name}</p>
-                  <p>{member.position}</p>
-                </div>
+        {team.map((member, index) => (
+          <div key={index}>
+            <div className={styles.member}>
+              <div className={styles.member_image}>
+                <GatsbyImage image={member.image.gatsbyImageData} alt=" " />
+
                 <div className={styles.member_social}>
                   <Link to={member.facebook}>
                     <StaticImage src="../../static/team/facebook.svg" alt=" " />
@@ -100,9 +55,13 @@ export default function Team() {
                   </Link>
                 </div>
               </div>
+              <div className={styles.member_info}>
+                <p className={styles.member_name}>{member.name}</p>
+                <p className={styles.member_position}>{member.position}</p>
+              </div>
             </div>
-          ))}
-        </Slider>
+          </div>
+        ))}
       </div>
     </div>
   );
